@@ -10,6 +10,8 @@ import {
   Gamepad,
   Zap,
   BookOpen,
+  ExternalLink,
+  Cloud,
   type LucideIcon,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -25,6 +27,7 @@ const iconMap: Record<string, LucideIcon> = {
   gamepad: Gamepad,
   zap: Zap,
   "book-open": BookOpen,
+  cloud: Cloud,
 };
 
 export function Achievements() {
@@ -63,15 +66,29 @@ export function Achievements() {
                 }}
                 className="w-full sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.75rem)]"
               >
-                <Card className="h-full border-2 transition-all duration-300 hover:border-primary">
-                  <CardContent className="flex items-center gap-3 p-4">
-                    <div className={`${achievement.colorClass} shrink-0`}>
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <div className="text-left">
-                      <p className="font-medium">{achievement.title}</p>
-                    </div>
-                  </CardContent>
+                <Card className={`h-full border-2 transition-all duration-300 ${achievement.url ? 'hover:border-primary cursor-pointer hover:shadow-lg' : ''}`}>
+                  {achievement.url ? (
+                    <a href={achievement.url} target="_blank" rel="noopener noreferrer" className="block h-full">
+                      <CardContent className="flex items-center gap-3 p-4 h-full">
+                        <div className={`${achievement.colorClass} shrink-0`}>
+                          <Icon className="h-6 w-6" />
+                        </div>
+                        <div className="text-left flex-1">
+                          <p className="font-medium pr-6">{achievement.title}</p>
+                        </div>
+                        <ExternalLink className="absolute top-4 right-4 h-4 w-4 text-muted-foreground opacity-50" />
+                      </CardContent>
+                    </a>
+                  ) : (
+                    <CardContent className="flex items-center gap-3 p-4">
+                      <div className={`${achievement.colorClass} shrink-0`}>
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <div className="text-left">
+                        <p className="font-medium">{achievement.title}</p>
+                      </div>
+                    </CardContent>
+                  )}
                 </Card>
               </motion.div>
             );

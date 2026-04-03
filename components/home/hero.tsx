@@ -13,8 +13,10 @@ import { StarHeader } from "@/components/shared/star-header";
 
 const displayedSkills = [
   "Full-Stack Developer",
-  "AI/ML Enthusiast",
-  "Open Source Contributor",
+  "AI/ML & DevOps Enthusiast",
+  "SIH'25 Grand Finalist",
+  "Odoo x VIT Hackathon Finalist",
+  "PW RIFT Hackathon Semi-Finalist",
 ];
 
 export function Hero() {
@@ -76,7 +78,7 @@ export function Hero() {
                   className="max-w-[600px] text-muted-foreground md:text-xl"
                 >
                   Computer Engineering Student @ PCCOER, Pune | Building things that matter 🚀.
-                  Passionate about building scalable, user-centric web and mobile applications in the EdTech and AI/ML space.
+                  Passionate about building scalable, user-centric web and mobile applications.
                 </motion.p>
               </div>
 

@@ -30,4 +30,16 @@ export const socialLinks: SocialLink[] = [
     url: "tel:+917498193847",
     icon: "phone",
   },
+  {
+    id: "leetcode",
+    name: "LeetCode",
+    url: "http://leetcode.com/u/yashdhadge",
+    icon: "leetcode",
+  },
+  {
+    id: "codechef",
+    name: "CodeChef",
+    url: "http://codechef.com/users/solar_mingle",
+    icon: "codechef",
+  },
 ];
