@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -37,16 +38,6 @@ const formSchema = z.object({
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  // Cleanup timeout if component unmounts mid-submission
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
 
   // Initialize form with validation
   const form = useForm<z.infer<typeof formSchema>>({
@@ -60,17 +51,31 @@ export function ContactForm() {
   });
 
   // Form submission handler
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
 
-    timeoutRef.current = setTimeout(() => {
-      // TODO: Wire up contact form backend (e.g. Resend, SendGrid)
-      void values;
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+        {
+          name: values.name,
+          email: values.email,
+          subject: values.subject,
+          message: values.message,
+          time: new Date().toLocaleString(),
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
+      );
+
       setIsSubmitting(false);
       setIsSubmitted(true);
       form.reset();
-      timeoutRef.current = null;
-    }, 1500);
+    } catch (error) {
+      console.error("Failed to send email", error);
+      setIsSubmitting(false);
+      alert("Failed to send message. Please try again later.");
+    }
   }
 
   return (

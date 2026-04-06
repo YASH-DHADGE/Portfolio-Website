@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Yash Milind Dhadge | Full-Stack Developer",
   description:
     "Full-Stack Developer, AI/ML Enthusiast, and Open Source Contributor. Computer Engineering Student @ PCCOER, Pune.",
-  metadataBase: new URL("https://yashdhadge.com"), // Placeholder URL as requested
+  metadataBase: new URL("https://yashdhadge.netlify.app/"), // Placeholder URL as requested
 
   // Basic metadata
   applicationName: "Yash Milind Dhadge Portfolio",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
-    url: "https://yashdhadge.com",
+    url: "https://yashdhadge.netlify.app/",
     title: "Yash Milind Dhadge | Full-Stack Developer",
     description:
       "Full-Stack Developer, AI/ML Enthusiast, and Open Source Contributor. Computer Engineering Student @ PCCOER, Pune.",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://yashdhadge.com",
+    canonical: "https://yashdhadge.netlify.app/",
   },
 };
 

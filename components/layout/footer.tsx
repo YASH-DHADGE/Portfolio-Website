@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Copyright, ExternalLink, Heart } from "lucide-react";
+import { Copyright, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { socialLinks } from "@/data/social";
 import { getIconComponent } from "@/lib/icons";
@@ -128,11 +128,7 @@ export function Footer() {
               <Copyright className="mr-1 h-3.5 w-3.5" />
               <span>{new Date().getFullYear()} Yash Milind Dhadge. All rights reserved.</span>
             </div>
-            <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
-              <span>Built with</span>
-              <Heart className="h-3.5 w-3.5 fill-primary text-primary" />
-              <span>using Next.js & Tailwind</span>
-            </div>
+
           </div>
         </motion.div>
       </motion.div>
