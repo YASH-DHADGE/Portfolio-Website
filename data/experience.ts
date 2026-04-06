@@ -8,29 +8,32 @@ export interface Experience {
   endDate: string;
   description: string;
   achievements: string[];
+  /** "professional" = paid / internship work; "volunteering" = campus clubs & events */
+  category: "professional" | "volunteering";
   type?: "work" | "research" | "education" | "leadership";
 }
 
-export const experiences: Experience[] = [
-  // ── Work Experience ───────────────────────────────────────
+export const professionalExperiences: Experience[] = [
   {
     id: "full-stack-intern",
     title: "Full Stack Developer Intern",
     company: "Scriptlet Solutions",
     location: "Wakad, Pune",
     startDate: "January 2026",
-    endDate: "May 2026",
+    endDate: "June 2026",
     description: "Worked on live production projects utilizing the MERN stack and developed full-stack web applications for client projects.",
     achievements: [
       "Built and maintained RESTful APIs and integrated third-party services to support product features",
       "Collaborated with cross-functional teams in an agile environment to deliver features across sprint cycles",
       "Contributed to UI/UX improvements, performance optimization, and code reviews on production codebases",
-      "Delivered scalable solutions for clients using MongoDB, Express.js, React.js, and Node.js"
+      "Delivered scalable solutions for clients using MongoDB, Express.js, React.js, and Node.js",
     ],
+    category: "professional",
     type: "work",
   },
+];
 
-  // ── Leadership ─────────────────────────────────────────────────────
+export const volunteeringExperiences: Experience[] = [
   {
     id: "acm-chairperson",
     title: "Chairperson",
@@ -42,8 +45,9 @@ export const experiences: Experience[] = [
     achievements: [
       "Leading strategic planning and technical workshop organization for 200+ members",
       "Coordinating 15+ events across technical and professional domains",
-      "Building a strong coding community on campus"
+      "Building a strong coding community on campus",
     ],
+    category: "volunteering",
     type: "leadership",
   },
   {
@@ -56,8 +60,9 @@ export const experiences: Experience[] = [
     description: "Managed professional relations and strategic partnerships for the robotics club.",
     achievements: [
       "Built strategic partnerships with 10+ industry professionals",
-      "Facilitated networking and mentorship opportunities for 100+ student members"
+      "Facilitated networking and mentorship opportunities for 100+ student members",
     ],
+    category: "volunteering",
     type: "leadership",
   },
   {
@@ -70,8 +75,9 @@ export const experiences: Experience[] = [
     description: "Part of the executive committee for the coding club.",
     achievements: [
       "Executed club events and coding competitions",
-      "Fostered a competitive programming culture among peers"
+      "Fostered a competitive programming culture among peers",
     ],
+    category: "volunteering",
     type: "leadership",
   },
   {
@@ -84,8 +90,9 @@ export const experiences: Experience[] = [
     description: "Served on the technical team for ACM PCCOER.",
     achievements: [
       "Assisted in technical execution of ACM events",
-      "Conducted technical peer-to-peer sessions"
+      "Conducted technical peer-to-peer sessions",
     ],
+    category: "volunteering",
     type: "leadership",
   },
   {
@@ -98,8 +105,15 @@ export const experiences: Experience[] = [
     description: "Event organization for Navdhara 2024.",
     achievements: [
       "Helped coordinate the Navdhara event",
-      "Managed logistical and technical support during the event duration"
+      "Managed logistical and technical support during the event duration",
     ],
+    category: "volunteering",
     type: "leadership",
-  }
+  },
+];
+
+/** Combined export for any code that still needs all entries */
+export const experiences: Experience[] = [
+  ...professionalExperiences,
+  ...volunteeringExperiences,
 ];

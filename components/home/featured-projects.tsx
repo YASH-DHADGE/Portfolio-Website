@@ -36,7 +36,7 @@ export function FeaturedProjects() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
               >
-                <ProjectCard project={project} priority={index === 0} />
+                <ProjectCard project={project} />
               </motion.div>
             ))}
           </div>

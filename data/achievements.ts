@@ -1,90 +1,120 @@
+export type AchievementCategory = "hackathon" | "certification" | "academic" | "other";
+
 export interface Achievement {
   id: string;
   title: string;
+  description: string;
+  year: string;
+  category: AchievementCategory;
   icon: string;
-  colorClass: string;
+  featured?: boolean;
   url?: string;
 }
 
 export const achievements: Achievement[] = [
   {
     id: "sih-25",
-    title: "🥇 SIH'25 Runner-Up — Smart India Hackathon 2025",
+    title: "SIH'25 Runner-Up — Smart India Hackathon 2025",
+    description: "Top 5 finalist out of 500+ teams nationwide",
+    year: "November 2025",
+    category: "hackathon",
     icon: "trophy",
-    colorClass: "text-yellow-600 dark:text-yellow-400",
+    featured: true,
   },
   {
     id: "mit-kurukshetra",
-    title: "🎯 MIT Kurukshetra 2025 Finalist",
+    title: "MIT Kurukshetra 2025 Finalist",
+    description: "National-level technical fest hackathon finalist",
+    year: "2025",
+    category: "hackathon",
     icon: "medal",
-    colorClass: "text-blue-600 dark:text-blue-400",
   },
   {
     id: "nxtwave-buildathon",
-    title: "🤖 OpenAI × NxtWave AI Buildathon Finalist",
-    icon: "award",
-    colorClass: "text-purple-600 dark:text-purple-400",
+    title: "OpenAI × NxtWave AI Buildathon Finalist",
+    description: "Finalist in AI hackathon powered by OpenAI & NxtWave",
+    year: "2025",
+    category: "hackathon",
+    icon: "zap",
   },
   {
     id: "rift-hackathon",
-    title: "⚡ RIFT 2026 Hackathon Semi-Finalist",
-    icon: "zap",
-    colorClass: "text-orange-600 dark:text-orange-400",
+    title: "RIFT 2026 Hackathon Semi-Finalist",
+    description: "Semi-finalist in AI/ML & DevOps Automation track",
+    year: "2026",
+    category: "hackathon",
+    icon: "award",
   },
   {
     id: "mht-cet",
-    title: "🏅 96 Percentile — MHT-CET",
+    title: "96 Percentile — MHT-CET",
+    description: "Top 4% statewide in Maharashtra engineering entrance",
+    year: "2022",
+    category: "academic",
     icon: "book-open",
-    colorClass: "text-green-600 dark:text-green-400",
   },
   {
     id: "oracle-foundations",
-    title: "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
-    icon: "code",
-    colorClass: "text-red-600 dark:text-red-400",
+    title: "OCI 2025 Certified Foundations Associate",
+    description: "Oracle Cloud Infrastructure core foundations certification",
+    year: "2025",
+    category: "certification",
+    icon: "cloud",
     url: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=4F721BE6C113320BD4B439E1F8D575C7C60FC0BEECA24BC9E432AA102B88C81A",
   },
   {
     id: "oracle-data-ai",
     title: "OCI 2025 Certified Data & AI Foundations Associate",
+    description: "Oracle Cloud data & AI fundamentals certification",
+    year: "2025",
+    category: "certification",
     icon: "cpu",
-    colorClass: "text-indigo-600 dark:text-indigo-400",
     url: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=693433824DD8CCAE4A2EDB98DEDA1FCAD916C41CD58724FB35479F55CF7567AF",
   },
   {
-    id: "oracle-genai",
+    id: "oracle-genai-pro",
     title: "OCI 2025 Certified Generative AI Professional",
-    icon: "zap",
-    colorClass: "text-purple-600 dark:text-purple-400",
+    description: "Professional-level Oracle GenAI certification",
+    year: "2025",
+    category: "certification",
+    icon: "sparkles",
     url: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=775166DF641F6B7F05DF38434F064B28BE7567AD450283908C3163D1AF9685AB",
   },
   {
     id: "oracle-genai-assoc",
     title: "OCI 2025 Certified Generative AI Associate",
-    icon: "award",
-    colorClass: "text-blue-600 dark:text-blue-400",
+    description: "Associate-level Oracle Generative AI certification",
+    year: "2025",
+    category: "certification",
+    icon: "sparkles",
     url: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=5B44B06DF285BFFAE319AB3C3E349165CEA951A65941B53132C80F4A2472A7B5",
   },
   {
     id: "aws-academy",
     title: "AWS Academy Graduate — Cloud Foundations",
+    description: "Amazon Web Services Cloud Foundations program graduate",
+    year: "2024",
+    category: "certification",
     icon: "cloud",
-    colorClass: "text-amber-600 dark:text-amber-400",
     url: "https://www.credly.com/badges/b11c8649-ee19-4229-9087-20604303fa31/public_url",
   },
   {
     id: "udemy-fullstack",
-    title: "The Complete 2025 Web Development BootCamp — Udemy",
+    title: "The Complete 2025 Web Development Bootcamp",
+    description: "Udemy full-stack web development certification",
+    year: "2025",
+    category: "certification",
     icon: "code",
-    colorClass: "text-green-600 dark:text-green-400",
     url: "https://www.udemy.com/certificate/UC-62b5fba2-4655-40c5-a66c-283617a852b7/",
   },
   {
     id: "github-achievements",
-    title: "🐙 GitHub Achievements (YOLO · Quickdraw · Pull Shark)",
+    title: "GitHub Achievements",
+    description: "YOLO · Quickdraw · Pull Shark — earned through open source contributions",
+    year: "2024–25",
+    category: "other",
     icon: "github",
-    colorClass: "text-gray-600 dark:text-gray-400",
-  }
+  },
 ];
 
 export const achievementTags = ["Hackathon Finalist", "Cloud Certified", "AI/ML Enthusiast", "Student Leadership"];

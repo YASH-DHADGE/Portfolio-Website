@@ -9,17 +9,28 @@ import { education } from "@/data/education";
 import { skills, type SkillCategory } from "@/data/skills";
 import { StarHeader } from "@/components/shared/star-header";
 
-const achievements = [
-  { highlight: "Runner-Up", label: "Smart India Hackathon 2025" },
-  { highlight: "Finalist", label: "OpenAI × NxtWave AI Buildathon" },
-  { highlight: "Semi-Finalist", label: "RIFT 2026 Hackathon" },
-  { highlight: "Finalist", label: "MIT Kurukshetra 2025" },
-  { highlight: "96 %ile", label: "MHT-CET" },
-  { highlight: "Certified", label: "Oracle Cloud Gen AI Professional" },
-  { highlight: "Chairperson", label: "ACMxPCCOER Student Chapter" },
-];
+import {
+  achievements,
+  type AchievementCategory,
+} from "@/data/achievements";
+import {
+  categoryConfig,
+  filters,
+  stats,
+  FeaturedCard,
+  AchievementCard,
+} from "@/components/home/achievements";
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
 export default function AboutPage() {
+  const [activeFilter, setActiveFilter] = useState<AchievementCategory | "all">("all");
+
+  const filtered =
+    activeFilter === "all"
+      ? achievements.filter((a) => !a.featured)
+      : achievements.filter((a) => !a.featured && a.category === activeFilter);
+
   return (
     <>
       <StarHeader>
@@ -54,13 +65,25 @@ export default function AboutPage() {
               <Card>
                 <CardContent className="space-y-4 p-6 leading-relaxed">
                   <p>
-                    I&apos;m Yash Milind Dhadge, a Full-Stack Developer and AI/ML Enthusiast pursuing my Bachelor of Technology in Computer Engineering at PCCOER, Pune. I build highly scalable, user-centric web and mobile applications with a strong focus on EdTech and workflow automation platforms.
+                    I&apos;m Yash Milind Dhadge, a Full-Stack Developer and AI/ML Enthusiast pursuing
+                    my Bachelor of Technology in Computer Engineering at PCCOER, Pune. I build
+                    highly scalable, user-centric web and mobile applications with a strong focus on
+                    EdTech and workflow automation platforms.
                   </p>
                   <p>
-                    I&apos;m passionate about solving real-world problems. Whether it&apos;s leading my team to runner-up position at the Smart India Hackathon (SIH 2025) with a gamified learning platform, passing the OpenAI × NxtWave Buildathon to finals, or engineering autonomous CI/CD pipelines, I thrive on building meaningful solutions. I also actively mentor peers and give back to the community as the Chairperson of the ACMxPCCOER Student Chapter.
+                    I&apos;m passionate about solving real-world problems. Whether it&apos;s leading
+                    my team to runner-up position at the Smart India Hackathon (SIH 2025) with a
+                    gamified learning platform, passing the OpenAI × NxtWave Buildathon to finals,
+                    or engineering autonomous CI/CD pipelines, I thrive on building meaningful
+                    solutions. I also actively mentor peers and give back to the community as the
+                    Chairperson of the ACMxPCCOER Student Chapter.
                   </p>
                   <p>
-                    My tech stack spans the modern web — React, React Native, Vite on the frontend, Node.js, Express, Django on the backend, and multiple AI/ML integrations (LangChain, OpenAI, Gemini) to craft intelligent systems. With certifications in Oracle Generative AI and AWS Cloud Foundations, I ensure the tools I build are robust, secure, and production-ready.
+                    My tech stack spans the modern web — React, React Native, Vite on the frontend,
+                    Node.js, Express, Django on the backend, and multiple AI/ML integrations
+                    (LangChain, OpenAI, Gemini) to craft intelligent systems. With certifications
+                    in Oracle Generative AI and AWS Cloud Foundations, I ensure the tools I build
+                    are robust, secure, and production-ready.
                   </p>
                 </CardContent>
               </Card>
@@ -88,7 +111,7 @@ export default function AboutPage() {
                         </div>
                         {edu.gpa && (
                           <Badge variant="outline" className="mt-2">
-                            CGPA: {edu.gpa}
+                            {edu.gpa.includes("%") ? "Percentage" : "CGPA"}: {edu.gpa}
                           </Badge>
                         )}
                         {edu.description && (
@@ -129,37 +152,95 @@ export default function AboutPage() {
             </motion.div>
           </div>
 
-          {/* Achievements — full-width highlight section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mt-16"
-          >
-            <div className="mb-6 flex items-center justify-center gap-2">
-              <Trophy className="h-5 w-5 text-primary" />
-              <h2 className="text-2xl font-bold">Achievements</h2>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {achievements.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 0.05 * i }}
+          {/* Achievements Section */}
+          <div className="mt-24 space-y-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <div className="mb-4 flex items-center justify-center gap-2">
+                <Trophy className="h-6 w-6 text-primary" />
+                <h2 className="text-3xl font-bold">Achievements</h2>
+              </div>
+              <p className="mx-auto max-w-xl text-muted-foreground">
+                Recognition and milestones from my technical journey
+              </p>
+            </motion.div>
+
+            {/* Stats bar */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex flex-wrap justify-center gap-4"
+            >
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="flex items-center gap-2 rounded-full border border-border bg-card/50 px-4 py-2"
                 >
-                  <Card className="h-full text-center">
-                    <CardContent className="flex h-full flex-col items-center justify-center p-5">
-                      <span className="text-2xl font-bold text-primary">{item.highlight}</span>
-                      <span className="mt-1 text-sm text-muted-foreground">{item.label}</span>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+                  <span className="text-base">{stat.emoji}</span>
+                  <span className="text-sm font-semibold" style={{ color: stat.color }}>
+                    {stat.count}
+                  </span>
+                  <span className="text-sm text-muted-foreground">{stat.label}</span>
+                </div>
               ))}
+            </motion.div>
+
+            {/* Filter tabs */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="flex flex-wrap justify-center gap-2"
+            >
+              {filters.map((f) => {
+                const cfg = categoryConfig[f];
+                const isActive = activeFilter === f;
+                return (
+                  <button
+                    key={f}
+                    onClick={() => setActiveFilter(f)}
+                    className="rounded-full px-5 py-2 text-sm font-medium transition-all duration-200"
+                    style={{
+                      background: isActive ? cfg.color : "rgba(255,255,255,0.05)",
+                      color: isActive ? "#0d0f1a" : cfg.color,
+                      border: `1px solid ${isActive ? cfg.color : "rgba(255,255,255,0.10)"}`,
+                      boxShadow: isActive ? `0 0 16px ${cfg.glow}` : "none",
+                    }}
+                  >
+                    {cfg.label}
+                  </button>
+                );
+              })}
+            </motion.div>
+
+            {/* Grid */}
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {(activeFilter === "all" || activeFilter === "hackathon") && <FeaturedCard />}
+
+              <AnimatePresence mode="popLayout">
+                {filtered.map((achievement, i) => (
+                  <motion.div
+                    key={achievement.id}
+                    layout
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.2, delay: i * 0.05 }}
+                  >
+                    <AchievementCard achievement={achievement} index={i} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

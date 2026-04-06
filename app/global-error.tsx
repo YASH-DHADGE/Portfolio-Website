@@ -14,7 +14,7 @@ export default function GlobalError({
   }, [error]);
 
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className="flex min-h-screen items-center justify-center bg-background text-foreground">
         <div className="px-4 text-center">
           <h1 className="text-4xl font-bold tracking-tighter">Something went wrong</h1>

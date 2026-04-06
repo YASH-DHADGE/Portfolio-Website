@@ -5,7 +5,6 @@ export interface Project {
   longDescription?: string;
   technologies: string[];
   achievements: string[];
-  image: string;
   github?: string;
   liveUrl?: string;
   featured: boolean;
@@ -37,7 +36,7 @@ export const projects: Project[] = [
       "Built automated video overview pipeline using Puppeteer and Fluent-FFmpeg",
       "Optimized document processing pipeline with caching, reducing processing time by 75%"
     ],
-    image: "/images/projects/placeholder.png", // Placeholder as no image is given
+    // Placeholder as no image is given
     github: "https://github.com/YASH-DHADGE/NoteBookLM",
     featured: true,
   },
@@ -62,7 +61,7 @@ export const projects: Project[] = [
       "Built a real-time multilingual translation system supporting 10 languages",
       "OpenAI × NxtWave AI Buildathon Finalist"
     ],
-    image: "/images/projects/placeholder.png",
+
     github: "https://github.com/YASH-DHADGE/Digital-Dockers-Suite",
     featured: true,
   },
@@ -88,7 +87,7 @@ export const projects: Project[] = [
       "Achieved 80% user retention by integrating gamification features",
       "Developed offline-first architecture for rural students"
     ],
-    image: "/images/projects/placeholder.png",
+
     github: "https://github.com/YASH-DHADGE/EDUGAMES",
     featured: true,
   },
@@ -113,13 +112,13 @@ export const projects: Project[] = [
       "Built a full-featured management system for hostels",
       "Implemented food waste reduction tracking"
     ],
-    image: "/images/projects/placeholder.png",
+
     github: "https://github.com/YASH-DHADGE/HostelPal",
     featured: false,
   },
   {
-    id: "devops-ai",
-    title: "DevOps-AI",
+    id: "healops",
+    title: "HealOps",
     description:
       "Autonomous CI/CD Healing Agent that intelligently detects, analyzes, and fixes pipeline failures in real time.",
     longDescription:
@@ -131,15 +130,15 @@ export const projects: Project[] = [
       "Semi-Finalist at RIFT 2026 Hackathon (AI/ML & DevOps Automation Track)",
       "Built autonomous self-healing CI/CD pipeline capabilities"
     ],
-    image: "/images/projects/placeholder.png",
-    github: "https://github.com/YASH-DHADGE/DevOps-AI",
+
+    github: "https://github.com/YASH-DHADGE/HEALOPS2",
     featured: false,
   },
   {
     id: "airesumebuilder",
     title: "AIResumeBuilder",
     description:
-      "AI-powered resume generation tool built for Scriptlet Solutions.",
+      "AI-powered resume generation tool which also helps to apply for jobs using chrome extension.",
     longDescription:
       "An AI-powered resume generation tool designed and built during my time at Scriptlet Solutions.",
     technologies: [
@@ -149,61 +148,8 @@ export const projects: Project[] = [
     achievements: [
       "Delivered a functional AI resume generation platform"
     ],
-    image: "/images/projects/placeholder.png",
+
     github: "https://github.com/YASH-DHADGE/AIResumeBuilder",
     featured: false,
   },
-  {
-    id: "tann-mann-gaadi",
-    title: "Tann-Mann-Gaadi-Task",
-    description:
-      "Internship task project for Tann Mann Gaadi organization.",
-    technologies: [
-      "MERN",
-      "Vanilla CSS",
-      "PostgreSQL"
-    ],
-    achievements: [
-      "Completed full-stack internship task"
-    ],
-    image: "/images/projects/placeholder.png",
-    github: "https://github.com/YASH-DHADGE/Tann-Mann-Gaadi-Task",
-    featured: false,
-  },
-  {
-    id: "greentree-springer",
-    title: "GreenTree-Springer-Backend",
-    description:
-      "Django backend built for GreenTree Springer internship.",
-    technologies: [
-      "Django",
-      "Python"
-    ],
-    achievements: [
-      "Built the backend infrastructure for GreenTree Springer"
-    ],
-    image: "/images/projects/placeholder.png",
-    github: "https://github.com/YASH-DHADGE/GreenTree-Springer-Backend",
-    featured: false,
-  },
-  {
-    id: "uidai-data-hack",
-    title: "UIDAI-DATA-Hackathon",
-    description: "Data hackathon submission for UIDAI.",
-    technologies: ["Jupyter Notebook", "Python", "Data Analysis"],
-    achievements: ["Competed in UIDAI Data Hackathon"],
-    image: "/images/projects/placeholder.png",
-    github: "https://github.com/YASH-DHADGE/UIDAI-DATA-Hackathon",
-    featured: false,
-  },
-  {
-    id: "phishing-detector",
-    title: "Phishing Detector",
-    description: "ML-based phishing detection model.",
-    technologies: ["Jupyter Notebook", "Python", "Machine Learning"],
-    achievements: ["Developed an ML model for phishing detection"],
-    image: "/images/projects/placeholder.png",
-    github: "https://github.com/YASH-DHADGE/Phishing_Detector",
-    featured: false,
-  }
 ];
