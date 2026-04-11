@@ -22,6 +22,7 @@ import {
 } from "@/components/home/achievements";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export default function AboutPage() {
   const [activeFilter, setActiveFilter] = useState<AchievementCategory | "all">("all");
@@ -184,7 +185,7 @@ export default function AboutPage() {
                   className="flex items-center gap-2 rounded-full border border-border bg-card/50 px-4 py-2"
                 >
                   <span className="text-base">{stat.emoji}</span>
-                  <span className="text-sm font-semibold" style={{ color: stat.color }}>
+                  <span className={cn("text-sm font-semibold", stat.colorClass)}>
                     {stat.count}
                   </span>
                   <span className="text-sm text-muted-foreground">{stat.label}</span>
@@ -207,13 +208,12 @@ export default function AboutPage() {
                   <button
                     key={f}
                     onClick={() => setActiveFilter(f)}
-                    className="rounded-full px-5 py-2 text-sm font-medium transition-all duration-200"
-                    style={{
-                      background: isActive ? cfg.color : "rgba(255,255,255,0.05)",
-                      color: isActive ? "#0d0f1a" : cfg.color,
-                      border: `1px solid ${isActive ? cfg.color : "rgba(255,255,255,0.10)"}`,
-                      boxShadow: isActive ? `0 0 16px ${cfg.glow}` : "none",
-                    }}
+                    className={cn(
+                      "rounded-full px-5 py-2 text-sm font-medium transition-all duration-200 border",
+                      isActive
+                        ? cn(cfg.bgClass, cfg.textClass, cfg.borderClass)
+                        : "bg-background/50 text-muted-foreground border-border hover:bg-muted"
+                    )}
                   >
                     {cfg.label}
                   </button>
