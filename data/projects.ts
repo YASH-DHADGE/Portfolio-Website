@@ -127,6 +127,32 @@ export const projects: Project[] = [
     github: "https://github.com/YASH-DHADGE/RoleReady",
     featured: false,
   },
+  {
+  id: "trackr-goal-tracking-portal",
+  title: "Trackr – Goal Tracking Portal",
+  description:
+    "An enterprise-grade in-house goal setting & tracking portal with role-based workflows for employees, managers, and HR/admin.",
+  longDescription:
+    "A full-stack goal management platform built for the AtomQuest Hackathon 2026 by Atomberg Technologies. Features a role-based dashboard system where employees set and submit goals, managers review and approve/rework them, and admins oversee organizational alignment. Implements a tiered escalation ladder (L1 → L2 → L3), audit trail for goal history, and Microsoft Azure SSO via Microsoft Entra ID for enterprise authentication. Integrated email and Microsoft Teams notifications for real-time workflow updates.",
+  technologies: [
+    "React.js",
+    "Vite",
+    "Node.js",
+    "Express.js",
+    "Supabase",
+    "PostgreSQL",
+    "Microsoft Azure (Entra ID)",
+    "Vercel",
+  ],
+  achievements: [
+    "Built end-to-end role-based goal tracking system for Employee, Manager, and Admin/HR roles",
+    "Implemented Azure SSO via Microsoft Entra ID for enterprise-grade authentication",
+    "Integrated email & Microsoft Teams notifications for goal submission and approval events",
+    "AtomQuest Hackathon 2026 by Atomberg Technologies – Participant",
+  ],
+  github: "https://github.com/YASH-DHADGE/Trackr---Goal-Tracking-Portal",
+  featured: false,
+},
 
   {
     id: "hostelpal",
