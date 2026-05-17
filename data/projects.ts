@@ -133,7 +133,7 @@ export const projects: Project[] = [
   description:
     "An enterprise-grade in-house goal setting & tracking portal with role-based workflows for employees, managers, and HR/admin.",
   longDescription:
-    "A full-stack goal management platform built for the AtomQuest Hackathon 2026 by Atomberg Technologies. Features a role-based dashboard system where employees set and submit goals, managers review and approve/rework them, and admins oversee organizational alignment. Implements a tiered escalation ladder (L1 → L2 → L3), audit trail for goal history, and Microsoft Azure SSO via Microsoft Entra ID for enterprise authentication. Integrated email and Microsoft Teams notifications for real-time workflow updates.",
+    "A full-stack goal management platform. Features a role-based dashboard system where employees set and submit goals, managers review and approve/rework them, and admins oversee organizational alignment. Implements a tiered escalation ladder (L1 → L2 → L3), audit trail for goal history, and Microsoft Azure SSO via Microsoft Entra ID for enterprise authentication. Integrated email and Microsoft Teams notifications for real-time workflow updates.",
   technologies: [
     "React.js",
     "Vite",
