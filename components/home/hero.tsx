@@ -12,11 +12,10 @@ import { getIconComponent } from "@/lib/icons";
 import { StarHeader } from "@/components/shared/star-header";
 
 const displayedSkills = [
-  "Full-Stack Developer",
+  "Full-Stack Software Developer",
   "AI/ML & DevOps Enthusiast",
   "SIH'25 Grand Finalist",
-  "Odoo x VIT Hackathon Finalist",
-  "PW RIFT Hackathon Semi-Finalist",
+  "5+ National level Hackathon Finalist",
 ];
 
 export function Hero() {
