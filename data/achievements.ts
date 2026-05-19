@@ -36,6 +36,7 @@ export const achievements: Achievement[] = [
     year: "2026",
     category: "certification",
     icon: "cloud",
+    url: "https://besa.techexpert.io/certification/yashdhadgecomp2357696/agentic-ai-on-aws-b5c10a",
   },
   {
     id: "oracle-foundations",
