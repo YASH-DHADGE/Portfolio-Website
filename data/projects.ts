@@ -101,7 +101,7 @@ export const projects: Project[] = [
     description:
       "A full-stack AI-powered resume builder that parses resumes, matches skills against job descriptions, and exports optimized resumes — with a Chrome extension for LinkedIn integration.",
     longDescription:
-      "Architected a microservices-based resume intelligence platform with a React frontend, Express backend, and a dedicated FastAPI AI service. Leveraged Mistral Large for smart resume parsing and Groq LLaMA 3 70B for deep skill extraction from job descriptions. Implemented semantic skill matching using sentence-transformers (all-MiniLM-L6-v2) to generate ATS compatibility scores. Built a Chrome Extension (Manifest V3) that scrapes LinkedIn job postings and triggers one-click analysis. Enabled multi-format export (DOCX via docxtemplater, PDF via Puppeteer) and email delivery of optimized resumes via Nodemailer.",
+      "Architected a microservices-based resume intelligence platform with a React frontend, Express backend, and a dedicated FastAPI AI service. Leveraged Mistral Large for smart resume parsing and for deep skill extraction from job descriptions. Implemented semantic skill matching using sentence-transformers (all-MiniLM-L6-v2) to generate ATS compatibility scores. Built a Chrome Extension (Manifest V3) that scrapes LinkedIn job postings and triggers one-click analysis. Enabled multi-format export (DOCX via docxtemplater, PDF via Puppeteer) and email delivery of optimized resumes via Nodemailer.",
     technologies: [
       "React 18",
       "Vite",
@@ -112,7 +112,6 @@ export const projects: Project[] = [
       "FastAPI",
       "Python",
       "Mistral Large",
-      "Groq LLaMA 3 70B",
       "sentence-transformers",
       "Puppeteer",
       "Chrome Extension (MV3)"
@@ -128,31 +127,31 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-  id: "trackr-goal-tracking-portal",
-  title: "Trackr – Goal Tracking Portal",
-  description:
-    "An enterprise-grade in-house goal setting & tracking portal with role-based workflows for employees, managers, and HR/admin.",
-  longDescription:
-    "A full-stack goal management platform. Features a role-based dashboard system where employees set and submit goals, managers review and approve/rework them, and admins oversee organizational alignment. Implements a tiered escalation ladder (L1 → L2 → L3), audit trail for goal history, and Microsoft Azure SSO via Microsoft Entra ID for enterprise authentication. Integrated email and Microsoft Teams notifications for real-time workflow updates.",
-  technologies: [
-    "React.js",
-    "Vite",
-    "Node.js",
-    "Express.js",
-    "Supabase",
-    "PostgreSQL",
-    "Microsoft Azure (Entra ID)",
-    "Vercel",
-  ],
-  achievements: [
-    "Built end-to-end role-based goal tracking system for Employee, Manager, and Admin/HR roles",
-    "Implemented Azure SSO via Microsoft Entra ID for enterprise-grade authentication",
-    "Integrated email & Microsoft Teams notifications for goal submission and approval events",
-    "AtomQuest Hackathon 2026 by Atomberg Technologies – Participant",
-  ],
-  github: "https://github.com/YASH-DHADGE/Trackr---Goal-Tracking-Portal",
-  featured: false,
-},
+    id: "trackr-goal-tracking-portal",
+    title: "Trackr – Goal Tracking Portal",
+    description:
+      "An enterprise-grade in-house goal setting & tracking portal with role-based workflows for employees, managers, and HR/admin.",
+    longDescription:
+      "A full-stack goal management platform. Features a role-based dashboard system where employees set and submit goals, managers review and approve/rework them, and admins oversee organizational alignment. Implements a tiered escalation ladder (L1 → L2 → L3), audit trail for goal history, and Microsoft Azure SSO via Microsoft Entra ID for enterprise authentication. Integrated email and Microsoft Teams notifications for real-time workflow updates.",
+    technologies: [
+      "React.js",
+      "Vite",
+      "Node.js",
+      "Express.js",
+      "Supabase",
+      "PostgreSQL",
+      "Microsoft Azure (Entra ID)",
+      "Vercel",
+    ],
+    achievements: [
+      "Built end-to-end role-based goal tracking system for Employee, Manager, and Admin/HR roles",
+      "Implemented Azure SSO via Microsoft Entra ID for enterprise-grade authentication",
+      "Integrated email & Microsoft Teams notifications for goal submission and approval events",
+      "AtomQuest Hackathon 2026 by Atomberg Technologies – Participant",
+    ],
+    github: "https://github.com/YASH-DHADGE/Trackr---Goal-Tracking-Portal",
+    featured: false,
+  },
 
   {
     id: "hostelpal",
