@@ -27,7 +27,7 @@ export const education: Education[] = [
     location: "Pune, India",
     startDate: "2021",
     endDate: "2023",
-    gpa: "74.5%",
+    gpa: "75%",
   },
   {
     id: "ssc",
